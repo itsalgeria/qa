@@ -60,12 +60,9 @@ export let options = {
     vus: 1000,
     stages: [
       { duration: "30s", target: 100 },
-      { duration: "4m", target: 1000 },
+      { duration: "1m", target: 1000 },
       { duration: "1m", target: 0 }
-    ],
-    thresholds: {
-      "RTT": ["avg<500"]
-    }
+    ]
   }
 
 
