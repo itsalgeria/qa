@@ -71,7 +71,7 @@ var myTrend = new Trend("my_trend");
 
 export default function () {
     group('Login test', function(){
-            var url = 'http://35.234.64.186/event/Salon-virtuel-La-ruee-vers-lOuest-Benin-Burkina-Faso-Cote-dIvoire-Guinee-Togo-event-20/event-login';
+            var url = 'http://34.89.243.233/event/Salon-virtuel-La-ruee-vers-lOuest-Benin-Burkina-Faso-Cote-dIvoire-Guinee-Togo-event-20/event-login';
             let headers = { 'Content-Type': 'application/json' };
             let data = { email: 'mehdi.souffi@senseconseil.com',
             mdp: '123456' };
@@ -87,7 +87,7 @@ export default function () {
     )
 
     group('Navigate to conference ',function(){
-        var url = 'http://35.234.64.186/event/Salon-virtuel-La-ruee-vers-lOuest-Benin-Burkina-Faso-Cote-dIvoire-Guinee-Togo-event-20/event-login';
+        var url = 'http://34.89.243.233/event/Salon-virtuel-La-ruee-vers-lOuest-Benin-Burkina-Faso-Cote-dIvoire-Guinee-Togo-event-20/event-login';
         let headers = { 'Content-Type': 'application/json' };
         let data = { email: 'mehdi.souffi@senseconseil.com',
         mdp: '123456' };
@@ -101,7 +101,7 @@ export default function () {
   // 
   //  conference_id POST
   //  
-  var url = 'http://35.234.64.186/event/accueil/Salon-virtuel-La-ruee-vers-lOuest-Benin-Burkina-Faso-Cote-dIvoire-Guinee-Togo-event-20';
+  var url = 'http://34.89.243.233/event/accueil/Salon-virtuel-La-ruee-vers-lOuest-Benin-Burkina-Faso-Cote-dIvoire-Guinee-Togo-event-20';
   res = http.get(url);
   res = http.post(url, data, { headers: headers });
   myRate.add(res.error_code);
@@ -114,7 +114,7 @@ export default function () {
   myTrend.add(res.timings.sending + res.timings.receiving);
   //console.log(res.body);
 //   // Post message
-  var url = 'http://35.234.64.186/send-comment';
+  var url = 'http://34.89.243.233/send-comment';
   headers = { 'Content-Type': 'application/json' };
   data = { conference_id: 29,
   comment: 'Test de charge' };
