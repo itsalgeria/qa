@@ -56,12 +56,12 @@ var range = function(start, end, step) {
 }
 
 export let options = {
-    max_vus: 100,
-    vus: 100,
+    max_vus: 1000,
+    vus: 1000,
     stages: [
-      { duration: "30s", target: 10 },
-      { duration: "4m", target: 100 },
-      { duration: "30s", target: 0 }
+      { duration: "30s", target: 100 },
+      { duration: "4m", target: 1000 },
+      { duration: "1m", target: 0 }
     ],
     thresholds: {
       "RTT": ["avg<500"]
