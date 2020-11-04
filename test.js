@@ -66,12 +66,12 @@ export let options = {
   }
 
 
-var myRate = new Rate("my_rate");
+var myRate = new Rate("error_rate");
 var myTrend = new Trend("my_trend");
-
+var domain = 'http://35.192.167.247';
 export default function () {
     group('Login test', function(){
-            var url = 'http://34.89.243.233/event/Salon-virtuel-La-ruee-vers-lOuest-Benin-Burkina-Faso-Cote-dIvoire-Guinee-Togo-event-20/event-login';
+            var url = domain+'/event/Salon-virtuel-La-ruee-vers-lOuest-Benin-Burkina-Faso-Cote-dIvoire-Guinee-Togo-event-20/event-login';
             let headers = { 'Content-Type': 'application/json' };
             let data = { email: 'mehdi.souffi@senseconseil.com',
             mdp: '123456' };
@@ -87,7 +87,7 @@ export default function () {
     )
 
     group('Navigate to conference ',function(){
-        var url = 'http://34.89.243.233/event/Salon-virtuel-La-ruee-vers-lOuest-Benin-Burkina-Faso-Cote-dIvoire-Guinee-Togo-event-20/event-login';
+        var url = domain+'/event/Salon-virtuel-La-ruee-vers-lOuest-Benin-Burkina-Faso-Cote-dIvoire-Guinee-Togo-event-20/event-login';
         let headers = { 'Content-Type': 'application/json' };
         let data = { email: 'mehdi.souffi@senseconseil.com',
         mdp: '123456' };
@@ -101,20 +101,20 @@ export default function () {
   // 
   //  conference_id POST
   //  
-  var url = 'http://34.89.243.233/event/accueil/Salon-virtuel-La-ruee-vers-lOuest-Benin-Burkina-Faso-Cote-dIvoire-Guinee-Togo-event-20';
+  var url = domain+'/event/accueil/Salon-virtuel-La-ruee-vers-lOuest-Benin-Burkina-Faso-Cote-dIvoire-Guinee-Togo-event-20';
   res = http.get(url);
   res = http.post(url, data, { headers: headers });
   myRate.add(res.error_code);
   myTrend.add(res.timings.sending + res.timings.receiving);
   console.log(res.error_code);  
 
-  var url = 'http://35.234.64.186/event/conferences/Salon-virtuel-La-ruee-vers-lOuest-Benin-Burkina-Faso-Cote-dIvoire-Guinee-Togo-event-20';
+  var url = domain+'/event/conferences/Salon-virtuel-La-ruee-vers-lOuest-Benin-Burkina-Faso-Cote-dIvoire-Guinee-Togo-event-20';
   res = http.get(url);
   myRate.add(res.error_code);
   myTrend.add(res.timings.sending + res.timings.receiving);
   //console.log(res.body);
 //   // Post message
-  var url = 'http://34.89.243.233/send-comment';
+  var url = domain+'/send-comment';
   headers = { 'Content-Type': 'application/json' };
   data = { conference_id: 29,
   comment: 'Test de charge' };
