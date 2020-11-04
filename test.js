@@ -106,7 +106,7 @@ export default function () {
   res = http.post(url, data, { headers: headers });
   myRate.add(res.error_code);
   myTrend.add(res.timings.sending + res.timings.receiving);
-  //console.log(res.body);  
+  console.log(res.error_code);  
 
   var url = 'http://35.234.64.186/event/conferences/Salon-virtuel-La-ruee-vers-lOuest-Benin-Burkina-Faso-Cote-dIvoire-Guinee-Togo-event-20';
   res = http.get(url);
@@ -126,7 +126,7 @@ export default function () {
   res = http.post(url, data, { headers: headers });
   myRate.add(res.error_code);
   myTrend.add(res.timings.sending + res.timings.receiving);
-  // console.log(res.body);
+  console.log(res.error_code);
 
     })
 }
