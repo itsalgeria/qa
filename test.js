@@ -68,7 +68,7 @@ export let options = {
 
 var myRate = new Rate("error_rate");
 var myTrend = new Trend("my_trend");
-var domain = 'http://35.246.253.124/';
+var domain = 'http://35.198.90.188/';
 export default function () {
     group('Login test', function(){
             var url = domain+'/event/Salon-virtuel-La-ruee-vers-lOuest-Benin-Burkina-Faso-Cote-dIvoire-Guinee-Togo-event-20/event-login';
