@@ -85,7 +85,7 @@ export default function () {
     )
 
     group('Navigate to conference ',function(){
-        var url = domain+'/event/Salon-virtuel-La-ruee-vers-lOuest-Benin-Burkina-Faso-Cote-dIvoire-Guinee-Togo-event-20/event-login';
+        var url = domain+'/event/Campus-France-Salon-en-ligne-des-etudes-en-France-cinquieme-edition-event-20/event-login';
         let headers = { 'Content-Type': 'application/json' };
         let data = { email: 'mehdi.souffi@senseconseil.com',
         mdp: '123456' };
@@ -105,13 +105,14 @@ export default function () {
   myRate.add(res.error_code);
   myTrend.add(res.timings.sending + res.timings.receiving);
   console.log(res.error_code);  
-
-  var url = domain+'/event/conferences/Salon-virtuel-La-ruee-vers-lOuest-Benin-Burkina-Faso-Cote-dIvoire-Guinee-Togo-event-20';
+  // https://salondz-campusfrance.org
+  var url = domain+'/event/stand/Campus-France-Salon-en-ligne-des-etudes-en-France-cinquieme-edition-event-20/Campus-France-Algerie-43';
   res = http.get(url);
   myRate.add(res.error_code);
   myTrend.add(res.timings.sending + res.timings.receiving);
   //console.log(res.body);
 //   // Post message
+        /*
   var url = domain+'/send-comment';
   headers = { 'Content-Type': 'application/json' };
   data = { conference_id: 29,
@@ -125,6 +126,6 @@ export default function () {
   myRate.add(res.error_code);
   myTrend.add(res.timings.sending + res.timings.receiving);
   console.log(res.error_code);
-
+  */
     })
 }
