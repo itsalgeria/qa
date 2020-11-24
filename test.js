@@ -66,13 +66,13 @@ export let options = {
 
 var myRate = new Rate("error_rate");
 var myTrend = new Trend("my_trend");
-var domain = 'https://salonvirtuelafrique.campusfrance.org/';
+var domain = 'https://salondz-campusfrance.org/';
 export default function () {
     group('Login test', function(){
             var url = domain+'/event/Salon-virtuel-La-ruee-vers-lOuest-Benin-Burkina-Faso-Cote-dIvoire-Guinee-Togo-event-20/event-login';
             let headers = { 'Content-Type': 'application/json' };
-            let data = { email: 'mehdi.souffi@senseconseil.com',
-            mdp: '123456' };
+            let data = { email: 'loubna.lahmici@senseconseil.com',
+            mdp: 'monpwd' };
             let res = http.post(url, JSON.stringify(data), { headers: headers });
             //console.log(JSON.parse(res.body).json.name);
             headers = { 'Content-Type': 'application/x-www-form-urlencoded' };
