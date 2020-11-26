@@ -66,7 +66,7 @@ export let options = {
 
 var myRate = new Rate("error_rate");
 var myTrend = new Trend("my_trend");
-var domain = 'https://salondz-campusfrance.org/';
+var domain = 'http://35.234.118.220/';
 export default function () {
     group('Login test', function(){
             var url = domain+'/event/Salon-virtuel-La-ruee-vers-lOuest-Benin-Burkina-Faso-Cote-dIvoire-Guinee-Togo-event-20/event-login';
