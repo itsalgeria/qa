@@ -56,7 +56,7 @@ var range = function(start, end, step) {
 }
 
 export let options = {
-    max_vus: 100,
+    max_vus: 1000,
     vus: 1000,
     stages: [
       { duration: "5m", target: 1000 },
