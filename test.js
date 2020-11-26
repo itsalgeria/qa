@@ -86,8 +86,8 @@ export default function () {
     group('Navigate to conference ',function(){
         var url = domain+'/event/Campus-France-Salon-en-ligne-des-etudes-en-France-cinquieme-edition-event-20/event-login';
         let headers = { 'Content-Type': 'application/json' };
-        let data = { email: 'mehdi.souffi@senseconseil.com',
-        mdp: '123456' };
+        let data = { email: 'loubna.lahmici@senseconseil.com',
+        mdp: 'monpwd' };
         let res = http.post(url, JSON.stringify(data), { headers: headers });
         //console.log(JSON.parse(res.body).json.name);
         headers = { 'Content-Type': 'application/x-www-form-urlencoded' };
@@ -98,23 +98,23 @@ export default function () {
   // 
   //  conference_id POST
   //  
-  var url = domain+'/event/accueil/Salon-virtuel-La-ruee-vers-lOuest-Benin-Burkina-Faso-Cote-dIvoire-Guinee-Togo-event-20';
+  var url = domain+'/event/conferences/Campus-France-Salon-en-ligne-des-etudes-en-France-cinquieme-edition-event-20';
   res = http.get(url);
   res = http.post(url, data, { headers: headers });
   myRate.add(res.error_code);
   myTrend.add(res.timings.sending + res.timings.receiving);
   console.log(res.error_code);  
   // https://salondz-campusfrance.org
-  var url = domain+'/event/stand/Campus-France-Salon-en-ligne-des-etudes-en-France-cinquieme-edition-event-20/Campus-France-Algerie-43';
+  var url = domain+'/event/conference/Campus-France-Salon-en-ligne-des-etudes-en-France-cinquieme-edition-event-20/04-ICD-Business-School-Paris-L-offre-de-formation-disponible-au-sein-de-l-ecole-de-commerce-ICD-Business-School--13';
   res = http.get(url);
   myRate.add(res.error_code);
   myTrend.add(res.timings.sending + res.timings.receiving);
   //console.log(res.body);
 //   // Post message
-        /*
+    
   var url = domain+'/send-comment';
   headers = { 'Content-Type': 'application/json' };
-  data = { conference_id: 29,
+  data = { conference_id: 13,
   comment: 'Test de charge' };
   //let res = http.post(url, JSON.stringify(data), { headers: headers });
   //console.log(JSON.parse(res.body).json.name);
@@ -125,6 +125,6 @@ export default function () {
   myRate.add(res.error_code);
   myTrend.add(res.timings.sending + res.timings.receiving);
   console.log(res.error_code);
-  */
+  
     })
 }
