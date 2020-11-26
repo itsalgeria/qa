@@ -56,17 +56,17 @@ var range = function(start, end, step) {
 }
 
 export let options = {
-    max_vus: 300,
-    vus: 300,
+    max_vus: 100,
+    vus: 1000,
     stages: [
       { duration: "5m", target: 1000 },
     ]
   }
 
-
+#http://34.120.140.94/
 var myRate = new Rate("error_rate");
 var myTrend = new Trend("my_trend");
-var domain = 'http://35.234.127.162/';
+var domain = 'http://34.120.140.94/';
 export default function () {
     group('Login test', function(){
             var url = domain+'/event/Salon-virtuel-La-ruee-vers-lOuest-Benin-Burkina-Faso-Cote-dIvoire-Guinee-Togo-event-20/event-login';
