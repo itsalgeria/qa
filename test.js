@@ -63,7 +63,6 @@ export let options = {
     ]
   }
 
-#http://34.120.140.94/
 var myRate = new Rate("error_rate");
 var myTrend = new Trend("my_trend");
 var domain = 'http://34.120.140.94/';
