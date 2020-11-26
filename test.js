@@ -111,7 +111,7 @@ export default function () {
   myTrend.add(res.timings.sending + res.timings.receiving);
   //console.log(res.body);
 //   // Post message
-    
+    /*
   var url = domain+'/send-comment';
   headers = { 'Content-Type': 'application/json' };
   data = { conference_id: 13,
@@ -124,7 +124,7 @@ export default function () {
   res = http.post(url, data, { headers: headers });
   myRate.add(res.error_code);
   myTrend.add(res.timings.sending + res.timings.receiving);
-  console.log(res.error_code);
+  console.log(res.error_code);*/
   
     })
 }
