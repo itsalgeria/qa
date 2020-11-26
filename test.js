@@ -59,7 +59,7 @@ export let options = {
     max_vus: 1000,
     vus: 1000,
     stages: [
-      { duration: "2m", target: 300 },
+      { duration: "2m", target: 1000 },
     ]
   }
 
