@@ -10,7 +10,7 @@ var print_error = function(res) {
     if ( res.code_erro != 0 )
     {
      console.log( res.code_erro);
-     #console.log(res.body); 
+     //console.log(res.body); 
     }
     else
     {
