@@ -14,7 +14,7 @@ var print_error = function(res) {
     }
     else
     {
-    console.log(0) ;
+    console.log(res.code_erro) ;
     }
 }
 
