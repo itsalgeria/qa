@@ -5,54 +5,17 @@ import { check, group, sleep } from 'k6';
 import http from 'k6/http';
 
 
-var range = function(start, end, step) {
-    var range = [];
-    var typeofStart = typeof start;
-    var typeofEnd = typeof end;
+var print_error = function(res) {
 
-    if (step === 0) {
-        throw TypeError("Step cannot be zero.");
+    if ( res.code_erro != 0 )
+    {
+        
+     console.log(res.body); 
     }
-
-    if (typeofStart == "undefined" || typeofEnd == "undefined") {
-        throw TypeError("Must pass start and end arguments.");
-    } else if (typeofStart != typeofEnd) {
-        throw TypeError("Start and end arguments must be of same type.");
+    else
+    {
+    console.log(0) ;
     }
-
-    typeof step == "undefined" && (step = 1);
-
-    if (end < start) {
-        step = -step;
-    }
-
-    if (typeofStart == "number") {
-
-        while (step > 0 ? end >= start : end <= start) {
-            range.push(start);
-            start += step;
-        }
-
-    } else if (typeofStart == "string") {
-
-        if (start.length != 1 || end.length != 1) {
-            throw TypeError("Only strings with one character are supported.");
-        }
-
-        start = start.charCodeAt(0);
-        end = end.charCodeAt(0);
-
-        while (step > 0 ? end >= start : end <= start) {
-            range.push(String.fromCharCode(start));
-            start += step;
-        }
-
-    } else {
-        throw TypeError("Only string and number types are supported");
-    }
-
-    return range;
-
 }
 
 export let options = {
@@ -78,6 +41,7 @@ export default function () {
             res = http.post(url, data, { headers: headers });
             myRate.add(res.error_code);
             myTrend.add(res.timings.sending + res.timings.receiving);
+           print_error(res);
 
            // console.log(res.body);
             }
@@ -94,27 +58,30 @@ export default function () {
         res = http.post(url, data, { headers: headers });
         myRate.add(res.error_code);
         myTrend.add(res.timings.sending + res.timings.receiving);
+          print_error(res);
+
   /// 
   // 
   //  conference_id POST
   //  
-  var url = domain+'/event/conferences/Campus-France-Salon-en-ligne-des-etudes-en-France-cinquieme-edition-event-20';
+  var url = domain+'/event/conferences/Campus-France-Maroc-Salon-virtuel-des-masters-1ere-edition-2020-event-20';
   res = http.get(url);
   res = http.post(url, data, { headers: headers });
   myRate.add(res.error_code);
   myTrend.add(res.timings.sending + res.timings.receiving);
   console.log(res.error_code);  
   // https://salondz-campusfrance.org
-  var url = domain+'/event/conference/Campus-France-Salon-en-ligne-des-etudes-en-France-cinquieme-edition-event-20/04-ICD-Business-School-Paris-L-offre-de-formation-disponible-au-sein-de-l-ecole-de-commerce-ICD-Business-School--13';
+  var url = domain+'/event/conference/Campus-France-Maroc-Salon-virtuel-des-masters-1ere-edition-2020-event-20/01-Presentation-Salon-Virtuel-des-Masters-2020-11';
   res = http.get(url);
   myRate.add(res.error_code);
   myTrend.add(res.timings.sending + res.timings.receiving);
   //console.log(res.body);
 //   // Post message
-    /*
+  print_error(res);
+   
   var url = domain+'/send-comment';
   headers = { 'Content-Type': 'application/json' };
-  data = { conference_id: 13,
+  data = { conference_id: 11,
   comment: 'Test de charge' };
   //let res = http.post(url, JSON.stringify(data), { headers: headers });
   //console.log(JSON.parse(res.body).json.name);
@@ -124,7 +91,8 @@ export default function () {
   res = http.post(url, data, { headers: headers });
   myRate.add(res.error_code);
   myTrend.add(res.timings.sending + res.timings.receiving);
-  console.log(res.error_code);*/
+   print_error(res);
+
   
     })
 }
