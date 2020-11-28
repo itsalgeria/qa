@@ -65,7 +65,7 @@ export let options = {
 
 var myRate = new Rate("error_rate");
 var myTrend = new Trend("my_trend");
-var domain = 'https://salons-masters-maroc-campusfrance.org';
+var domain = 'https://virtual.hdispo.com';
 export default function () {
     group('Login test', function(){
             var url = domain+'/event/Salon-virtuel-La-ruee-vers-lOuest-Benin-Burkina-Faso-Cote-dIvoire-Guinee-Togo-event-20/event-login';
